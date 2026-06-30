@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+     # - "443:443"
+    volumes:
+      - /home/adminCL/mi-proyecto:/var/www/html:delegated
+      - /data:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
